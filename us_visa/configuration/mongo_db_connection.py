@@ -1,14 +1,16 @@
+import os
 import sys
 
 from us_visa.exception import USvisaException
 from us_visa.logger import logging
 
-import os
+from dotenv import load_dotenv
 from us_visa.constants import DATABASE_NAME, MONGODB_URL_KEY
 import pymongo
 import certifi
 
 ca = certifi.where()
+load_dotenv()
 
 class MongoDBClient:
     """
@@ -23,7 +25,7 @@ class MongoDBClient:
     def __init__(self, database_name=DATABASE_NAME) -> None:
         try:
             if MongoDBClient.client is None:
-                mongo_db_url = os.getenv(MONGODB_URL_KEY)
+                mongo_db_url = os.getenv('URL')
                 if mongo_db_url is None:
                     raise Exception(f"Environment key is not set.")
                 MongoDBClient.client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
