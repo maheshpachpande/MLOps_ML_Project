@@ -32,3 +32,10 @@ data_validation:
   data_validation_dir_name: "data_validation"
   data_validation_drift_report_dir: "drift_report"
   data_validation_drift_report_file_name: "report.yaml"
+
+
+# data transformation related constants
+data_transformation:
+  data_transformation_dir_name: "data_transformation"
+  data_transformation_transformed_data_dir: "transformed"
+  data_transformation_transformed_object_dir: "transformed_object"

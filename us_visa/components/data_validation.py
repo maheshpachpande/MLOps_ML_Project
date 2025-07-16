@@ -157,8 +157,8 @@ class DataValidation:
 
             data_validation_artifact = DataValidationArtifact(
                 validation_status=validation_status,
-                message=validation_error_msg,
-                drift_report_file_path=self.data_validation_config.drift_report_file_path
+                drift_report_file_path=self.data_validation_config.drift_report_file_path,
+                message=validation_error_msg
             )
 
             logging.info(f"Data validation artifact: {data_validation_artifact}")
@@ -166,17 +166,17 @@ class DataValidation:
         except Exception as e:
             raise USvisaException(e, sys) from e
         
-if __name__ == "__main__":
-    try:
-        logging.info("Data validation component started")
-        data_ingestion_artifact = DataIngestionArtifact(
-            trained_file_path="path/to/train.csv",
-            test_file_path="path/to/test.csv"
-        )
-        data_validation_config = DataValidationConfig()
-        data_validation = DataValidation(data_ingestion_artifact, data_validation_config)
-        data_validation.initiate_data_validation()
-        logging.info("Data validation component completed")
-    except Exception as e:
-        logging.exception(e)
-        raise e
+# if __name__ == "__main__":
+#     try:
+#         logging.info("Data validation component started")
+#         data_ingestion_artifact = DataIngestionArtifact(
+#             trained_file_path="path/to/train.csv",
+#             test_file_path="path/to/test.csv"
+#         )
+#         data_validation_config = DataValidationConfig()
+#         data_validation = DataValidation(data_ingestion_artifact, data_validation_config)
+#         data_validation.initiate_data_validation()
+#         logging.info("Data validation component completed")
+#     except Exception as e:
+#         logging.exception(e)
+#         raise e

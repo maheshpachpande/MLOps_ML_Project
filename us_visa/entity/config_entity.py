@@ -43,3 +43,18 @@ class DataValidationConfig:
     
 
 
+
+@dataclass
+class DataTransformationConfig:
+    data_transformation_dir: str = os.path.join(training_pipeline_config.artifact_dir, 
+                                                config['data_transformation']['data_transformation_dir_name'])
+    transformed_train_file_path: str = os.path.join(data_transformation_dir, 
+                                                    config['data_transformation']['data_transformation_transformed_data_dir'],
+                                                    config['files']['train_file_name'].replace("csv", "npy"))
+    transformed_test_file_path: str = os.path.join(data_transformation_dir, 
+                                                   config['data_transformation']['data_transformation_transformed_data_dir'],
+                                                   config['files']['test_file_name'].replace("csv", "npy"))
+    transformed_object_file_path: str = os.path.join(data_transformation_dir,
+                                                     config['data_transformation']['data_transformation_transformed_object_dir'],
+                                                     config['files']['preprocessing_object_file_name'])
+    
