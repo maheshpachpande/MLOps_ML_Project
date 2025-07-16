@@ -58,3 +58,16 @@ class DataTransformationConfig:
                                                      config['data_transformation']['data_transformation_transformed_object_dir'],
                                                      config['files']['preprocessing_object_file_name'])
     
+
+
+
+@dataclass
+class ModelTrainerConfig:
+    model_trainer_dir: str = os.path.join(training_pipeline_config.artifact_dir, 
+                                          config['model_trainer']['model_trainer_dir_name'])
+    trained_model_file_path: str = os.path.join(model_trainer_dir, 
+                                                config['model_trainer']['model_trainer_trained_model_dir'], 
+                                                config['files']['model_file_name'])
+    expected_accuracy: float = config['model_trainer']['model_trainer_expected_score']
+    model_config_file_path: str = config['model_trainer']['model_trainer_model_config_file_path']
+

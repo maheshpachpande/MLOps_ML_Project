@@ -39,3 +39,12 @@ data_transformation:
   data_transformation_dir_name: "data_transformation"
   data_transformation_transformed_data_dir: "transformed"
   data_transformation_transformed_object_dir: "transformed_object"
+
+
+# model trainer related constants
+model_trainer:
+  model_trainer_dir_name: "model_trainer"
+  model_trainer_trained_model_dir: "trained_model"
+  model_trainer_trained_model_name: "model.pkl"
+  model_trainer_expected_score: 0.6
+  model_trainer_model_config_file_path: "config/model.yaml"
