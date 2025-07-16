@@ -32,3 +32,14 @@ class DataIngestionConfig:
     train_test_split_ratio: float = config['data_ingestion']['data_ingestion_train_test_split_ratio']
     collection_name:str = config['data_ingestion']['collection_name']
 
+
+
+
+@dataclass
+class DataValidationConfig:
+    data_validation_dir: str = os.path.join(training_pipeline_config.artifact_dir, config['data_validation']['data_validation_dir_name'])
+    drift_report_file_path: str = os.path.join(data_validation_dir, config['data_validation']['data_validation_drift_report_dir'],
+                                               config['data_validation']['data_validation_drift_report_file_name'])
+    
+
+
