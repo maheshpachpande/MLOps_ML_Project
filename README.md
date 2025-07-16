@@ -8,3 +8,12 @@
 - conda activate visa
 
 ### template.py =====> setup.py =====> requirements =====> logging =====> exception =====> constants =====> mongodb connection =====> data access =====> data ingestion
+
+### Workflow:
+- constants
+- entity
+- components
+- pipeline
+- Main file
+
+
